@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <a href="{% url "to_do_list_app:create_task" %}" class="btn btn-primary link-to-page" style="float: right;">
+    Create
+  </a>
+  <h1>Tasks List</h1>
+  {% if tasks %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Content</th>
+          <th>Completed</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for task in tasks %}
+          <tr>
+            <td><a href="{% url "to_do_list_app:update_task" pk=task.id %}">{{ task.id }}</a></td>
+            <td>
+              {{ task.content }}
+              <p>Created: {{ task.datetime }}</p>
+              <p>
+                Tags:
+                {% for tag in task.tags.all %}
+                  {{ tag.name }}
+                  <a href="{% url "to_do_list_app:update_task" pk=task.id %}" class="btn btn-info">Update</a>
+                  <a href="{% url "to_do_list_app:delete_task" pk=task.id %}" class="btn btn-danger">Delete</a>
+                {% endfor %}
+              </p>
+            </td>
+            <td>
+              {% if task.task_done == False %}
+                <a href="{% url "to_do_list_app:complete_task" pk=task.id %}" class="btn btn-success">Complete</a>
+              {% else %}
+                <a href="{% url "to_do_list_app:undo_task" pk=task.id %}" class="btn btn-info">Undo</a>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>There are no tasks in the to-do list</p>
+  {% endif %}
+{% endblock %}
