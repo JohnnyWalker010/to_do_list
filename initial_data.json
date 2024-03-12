@@ -1,0 +1,78 @@
+[
+  {
+    "model": "to_do_list_app.tag",
+    "pk": 1,
+    "fields": {
+      "name": "Work"
+    }
+  },
+  {
+    "model": "to_do_list_app.tag",
+    "pk": 2,
+    "fields": {
+      "name": "Personal"
+    }
+  },
+  {
+    "model": "to_do_list_app.tag",
+    "pk": 3,
+    "fields": {
+      "name": "Study"
+    }
+  },
+  {
+    "model": "to_do_list_app.task",
+    "pk": 1,
+    "fields": {
+      "content": "Finish project proposal",
+      "datetime": "2024-03-11T10:00:00Z",
+      "deadline": "2024-03-15T18:00:00Z",
+      "task_done": false,
+      "tags": [1, 2]
+    }
+  },
+  {
+    "model": "to_do_list_app.task",
+    "pk": 2,
+    "fields": {
+      "content": "Buy groceries",
+      "datetime": "2024-03-12T15:30:00Z",
+      "deadline": "2024-03-13T18:00:00Z",
+      "task_done": false,
+      "tags": [2]
+    }
+  },
+  {
+    "model": "to_do_list_app.task",
+    "pk": 3,
+    "fields": {
+      "content": "Study for exams",
+      "datetime": "2024-03-14T14:00:00Z",
+      "deadline": "2024-03-20T18:00:00Z",
+      "task_done": false,
+      "tags": [3]
+    }
+  },
+  {
+    "model": "to_do_list_app.task",
+    "pk": 4,
+    "fields": {
+      "content": "Submit report",
+      "datetime": "2024-03-18T12:00:00Z",
+      "deadline": "2024-03-20T18:00:00Z",
+      "task_done": false,
+      "tags": [1]
+    }
+  },
+  {
+    "model": "to_do_list_app.task",
+    "pk": 5,
+    "fields": {
+      "content": "Go for a run",
+      "datetime": "2024-03-13T07:00:00Z",
+      "deadline": "2024-03-13T08:00:00Z",
+      "task_done": false,
+      "tags": [2]
+    }
+  }
+]
